@@ -376,6 +376,9 @@ public final class Keys {
     public static final ConfigKey RABBITMQ_CONNECTION_URL = new ConfigKey(
             "rabbitmq.connectionUrl", String.class);
 
+    public static final ConfigKey RABBITMQ_EXCHANGE_NAME = new ConfigKey(
+            "rabbitmq.exchangeName", String.class);
+
     private Keys() {
     }
 

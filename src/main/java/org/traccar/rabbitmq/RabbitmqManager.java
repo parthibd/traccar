@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class RabbitmqManager {
-    private static final String EXCHANGE_NAME = "traccar";
+    private final String EXCHANGE_NAME;
     private static final Logger LOGGER = LoggerFactory.getLogger(RabbitmqManager.class);
     private final Config config;
     private Connection connection;
@@ -22,6 +22,7 @@ public class RabbitmqManager {
 
     public RabbitmqManager(Config config) throws Exception {
         this.config = config;
+        this.EXCHANGE_NAME = config.getString(Keys.RABBITMQ_EXCHANGE_NAME);
         initRabbitmq();
     }
 
